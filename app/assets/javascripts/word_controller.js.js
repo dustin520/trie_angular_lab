@@ -12,8 +12,18 @@ WordsCtrl = (function() {
     return this;
   }
 
+  WordsCtrl.prototype.addWord = function(newWord) {
+    return this.Word.create(newWord).success(data)(function() {
+      return console.log(data);
+    });
+  };
+
+  WordsCtrl.prototype.testing = function() {
+    return "hi";
+  };
+
   return WordsCtrl;
 
 })();
 
-WordCtrls.controller("WordsCtrl", ["$scope", WordsCtrl]);
+WordCtrls.controller("WordsCtrl", ["$scope", "Word", WordsCtrl]);

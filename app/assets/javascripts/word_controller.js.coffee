@@ -7,7 +7,12 @@ class WordsCtrl
     @Word.all()
     return this
 
-  # testing: () -> 
-  #   "hi"
+  addWord: (newWord) -> 
+    @Word.create(newWord)
+    .success(data) -> 
+      console.log(data)
 
-WordCtrls.controller("WordsCtrl", ["$scope", WordsCtrl])
+  testing: () -> 
+    "hi"
+
+WordCtrls.controller("WordsCtrl", ["$scope", "Word", WordsCtrl])
