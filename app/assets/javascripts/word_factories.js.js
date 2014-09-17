@@ -7,15 +7,15 @@ WordFactories.factory("Word", [
   "$http", function($http) {
     return {
       all: function() {
-        console.log("getting all");
         return $http.get("/words.json").success(function(data) {
           return console.log("data: " + data);
         });
       },
       create: function(newWord) {
-        console.log("new word: " + newWord);
+        console.log("new word: " + newWord + "name" + newWord.name);
         return $http.post("/words.json", {
-          word: newWord
+          name: newWord.name,
+          description: newWord.description
         });
       }
     };

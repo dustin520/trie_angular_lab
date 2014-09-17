@@ -8,3 +8,5 @@
 
 
 word = Word.create({name: "firstword", description: "the description"})
+word2 = Word.create({name: "second word", description: "blah blah blah"})
+word3 = Word.create({name: "third word", description: "yadi yadi yah"})

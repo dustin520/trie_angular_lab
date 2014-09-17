@@ -1,21 +1,44 @@
 
 <div class="container">
 
-  <h1>Trie AutoComplete Lab</h1>
+  <div class="row">
+    
+    <h1 class="text-center">Trie AutoComplete Lab</h1>
 
-  <form ng-submit="addWord(newWord)">
-    <input type="text" ng-model="newWord.name" autofocus required placeholder="add word">
-    <button>Add</button>
-  </form>
+    <form class="col-md-offset-3 col-md-6 text-center" ng-submit="words.addWord(newWord)">
+      <input class="form-control text-center" type="text" ng-model="newWord.name" autofocus required placeholder="add word">
+      <input class="form-control text-center" type="text" ng-model="newWord.description" placeholder="description">
+      <button class="form-control btn btn-info">Add</button>
+    </form>
+
+  </div>
 
   <hr class="featurette-divider">
 
-  {{1+3}} <br>
+  <div class="row col-md-offset-2 col-md-4 align-left">
+    <h4>Words</h4>
+    <ul ng-repeat="word in words.wordsArr">
+      <p><strong>Word: </strong>{{word.name}}</p>
+      <p><strong>Desc: </strong>{{word.description}}</p>
+    </ul>
+  </div>
 
-  {{words}} <br>
+  <!-- <hr class="featurette-divider"> -->
+  
+  <div class="row col-md-4 text-center">
+    <h4>Test</h4>
 
-  {{words.test}} <br>
+    Angular Test Operation: {{1+3}} <br>
 
-  {{words.testing()}}
+    <!-- All the words in array: {{words.allWords}} -->
+
+    <p>Show Word Ex from db: {{words.allWords[0].name}}</p> <br>
+
+    <!-- <p>words (array object) - {{words}}</p> <br> -->
+
+    words.test - {{words.test}} <br>
+
+    words.testing() - {{words.testing()}}
+  </div>
 
 </div>
